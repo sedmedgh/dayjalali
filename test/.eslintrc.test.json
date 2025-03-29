@@ -1,0 +1,11 @@
+{
+  "extends": "../.eslintrc",
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-empty": "off",
+    "quotes": ["error", "single"],
+    "object-curly-spacing": ["error", "always"]
+  }
+} 
