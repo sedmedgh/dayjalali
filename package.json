@@ -1,0 +1,90 @@
+{
+  "name": "dayjalali",
+  "version": "1.0.1",
+  "description": "Persian (Jalali, Khorshidi) Calendar Plugin for Day.js with TypeScript support",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/* test/* --ext .ts,.js --fix",
+    "build": "tsup && npm run size",
+    "release": "npm run prepublish && standard-version $* && git push --follow-tags && npm publish",
+    "prepublish": "npm run build",
+    "size": "size-limit"
+  },
+  "size-limit": [
+    {
+      "limit": "3.12 KB",
+      "path": "dist/index.js",
+      "ignore": [
+        "dayjs",
+        "jalaali-js"
+      ]
+    },
+    {
+      "limit": "3.12 KB",
+      "path": "dist/index.mjs",
+      "ignore": [
+        "dayjs",
+        "jalaali-js"
+      ]
+    }
+  ],
+  "pre-commit": [
+    "lint"
+  ],
+  "keywords": [
+    "dayjs",
+    "date",
+    "time",
+    "typescript",
+    "immutable",
+    "moment",
+    "jalali",
+    "jalaali-js",
+    "persian-calendar",
+    "khorshidi"
+  ],
+  "author": "sedmedgh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sedmedgh/dayjalali.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-typescript": "^7.27.0",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@types/jalaali-js": "^1.2.0",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
+    "babel-jest": "^29.7.0",
+    "dayjs": "^1.11.13",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "jest": "^29.7.0",
+    "mockdate": "^3.0.5",
+    "pre-commit": "^1.2.2",
+    "size-limit": "^11.2.0",
+    "standard-version": "9.5.0",
+    "ts-jest": "^29.2.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.1.0",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "jalaali-js": "^1.2.8"
+  }
+}
